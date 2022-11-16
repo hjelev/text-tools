@@ -1,7 +1,7 @@
 import streamlit as st
 from utils import tools
 
-st.set_page_config(page_title="Text Tools - Sort Lines", page_icon="📖")
+st.set_page_config(page_title="Text Tools - Convert Case", page_icon="📖")
 st.image('logo.png', width=300)
 st.title("Convert Case")
 st.write("convert text to upper, lower or title case")
