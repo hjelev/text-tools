@@ -3,16 +3,14 @@ from utils import tools
 
 st.set_page_config(page_title="Text Tools", page_icon="📖")
 st.title("Text Tools")
-st.write("remove empty lines, remove duplicate lines, base64 encode text, base64 decode text, sort lines, sort lines reversed")
+st.write("remove empty lines, remove duplicate lines, remove whitespace")
 
 option = st.selectbox(
             'Choose Text Transformatino?',
             ( 'Remove Empty Lines', 
             'Remove Duplicate Lines',
-            'Base64 Encode Text',
-            'Base64 Decode Text',
-            'Sort Lines', 
-            'Sort Lines Reversed'))
+            'Remove Whitespace',
+            ))
 
 text_area = st.empty()
 
@@ -31,12 +29,6 @@ if input_text:
         transformed_text = tools.remove_empty_lines(input_text)
     elif option == 'Remove Duplicate Lines':
         transformed_text = tools.remove_duplicate_lines(input_text)
-    elif option == 'Sort Lines Reversed':
-        transformed_text = tools.sort_reversed(input_text)
-    elif option == 'Sort Lines':
-        transformed_text = tools.sort(input_text)
-    elif option == 'Base64 Encode Text':
-        transformed_text = tools.base64_encode(input_text)
-    elif option == 'Base64 Decode Text':
-        transformed_text = tools.base64_decode(input_text)       
+    elif option == 'Remove Whitespace':
+        transformed_text = tools.strip_text(input_text)   
     st.code(transformed_text)

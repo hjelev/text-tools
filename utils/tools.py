@@ -38,4 +38,9 @@ def base64_decode(text):
     decoded = base64.b64decode(text.encode())
     return decoded.decode("utf-8")
 
-# base64.b64decode(a)
+def strip_text(text):
+    lines = text.splitlines()
+    stripped_lines = []
+    for line in lines:
+        stripped_lines.append(line.strip())
+    return '\n'.join(stripped_lines)
