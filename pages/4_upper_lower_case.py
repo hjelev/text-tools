@@ -2,14 +2,14 @@ import streamlit as st
 from utils import tools
 
 st.set_page_config(page_title="Text Tools - Sort Lines", page_icon="📖")
-st.title("Sort Lines")
-st.write("sort lines, sort lines reversed")
+st.title("Convert Case")
+st.write("convert text to upper, lower or title case")
 
 option = st.selectbox(
             'Choose Text Transformatino?',
-            ('Sort Lines', 
-            'Sort Lines Reversed',
-            'Revrese Text'))
+            ('To Upper Case', 
+            'To Lower Case',
+            'To Title Case'))
 
 text_area = st.empty()
 
@@ -25,11 +25,10 @@ if file:
 if input_text:
     st.text('Result:')
 
-    if option == 'Sort Lines Reversed':
-        transformed_text = tools.sort_reversed(input_text)
-    elif option == 'Sort Lines':
-        transformed_text = tools.sort(input_text)
-    elif option == 'Revrese Text':
-        transformed_text = input_text[::-1]
-    
+    if option == 'To Upper Case':
+        transformed_text = input_text.upper()
+    elif option == 'To Lower Case':
+        transformed_text = input_text.lower()
+    elif option == 'To Title Case':
+        transformed_text = input_text.title()
     st.code(transformed_text)
