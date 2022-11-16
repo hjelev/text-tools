@@ -1,16 +1,15 @@
 import streamlit as st
 from utils import tools
 
-st.set_page_config(page_title="Text Tools - Sort Lines", page_icon="📖")
+st.set_page_config(page_title="Text Tools - Cyrillic to Latin", page_icon="📖")
 st.image('logo.png', width=300)
-st.title("Sort Lines")
-st.write("sort lines, sort lines reversed")
+st.title("Cyrillic to Latin and Latin to Cyrillic")
+st.write("cyrillic to latin & latin to cyrillic")
 
 option = st.selectbox(
             'Choose Text Transformatino?',
-            ('Sort Lines', 
-            'Sort Lines Reversed',
-            'Revrese Text'))
+            ('Cyrillic to Latin',
+            'Latin to Cyrillic'))
 
 text_area = st.empty()
 
@@ -26,11 +25,10 @@ if file:
 if input_text:
     st.text('Result:')
 
-    if option == 'Sort Lines Reversed':
-        transformed_text = tools.sort_reversed(input_text)
-    elif option == 'Sort Lines':
-        transformed_text = tools.sort(input_text)
-    elif option == 'Revrese Text':
-        transformed_text = input_text[::-1]
+    if option == 'Cyrillic to Latin':
+        transformed_text = tools.cyr_to_latin(input_text)
+    elif option == 'Latin to Cyrillic':
+        transformed_text = tools.latin_to_cyr(input_text)
+
     
     st.code(transformed_text)

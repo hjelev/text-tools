@@ -2,7 +2,8 @@ import streamlit as st
 from utils import tools
 
 st.set_page_config(page_title="Text Tools", page_icon="📖")
-st.title("Text Tools")
+st.image('logo.png', width=300)
+st.title("Text Tools - remove lines")
 st.write("remove empty lines, remove duplicate lines, remove whitespace")
 
 option = st.selectbox(

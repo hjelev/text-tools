@@ -2,6 +2,7 @@ import streamlit as st
 from utils import tools
 
 st.set_page_config(page_title="Text Tools - Encode or Decode", page_icon="📖")
+st.image('logo.png', width=300)
 st.title("Encode or Decode Text")
 st.write("encode text to base64, decode base64 to text")
 
